@@ -1,0 +1,22 @@
+image: phython
+
+    
+stages:
+    
+    - test
+
+build:
+    stage: test
+
+    script:
+    - echo "Test Stage"
+    - make
+    artifacts:
+        paths:
+        - branch
+
+test:
+  stage: test
+  script:
+    - echo "Test Stage"
+    - ./compare_results.sh
